@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #E7C28E;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.item {
+  background-color: black;
+  border: solid 2px silver;
+  border-style: outset;
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  height: 86px;
+  width: 86px;
+}
+
+.item-icon {
+  background-color: black;
+  border: solid 1px;
+  border-style: inset;
+  height: 50px;
+  margin: 1px auto;
+  margin-bottom: 5px;
+  width: 50px;
+}
+
+.building {
+  background-color: #d23700;
+  border-color: #e05933;
+}
