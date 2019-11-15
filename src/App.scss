@@ -1,4 +1,5 @@
 .App {
+  font-family: 'Times New Roman', Times, serif;
   text-align: center;
 }
 
@@ -8,41 +9,133 @@
 
 .App-header {
   background-color: #E7C28E;
+  background: url('https://res.cloudinary.com/webdevacademy/image/upload/v1573825790/techtree-bg.png');
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
   color: #09d3ac;
 }
 
+ul {
+  list-style: none;
+}
+
+.age {
+  border: solid 2px brown;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  // justify-content: space-around;
+  width: 15%;
+
+  .age-title {
+    bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+  }
+
+  .items-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .item {
   background-color: black;
   border: solid 2px silver;
+  border-radius: 3px;
   border-style: outset;
   color: #fff;
   cursor: pointer;
-  font-size: 11px;
+  font-size: .8rem;
   height: 86px;
+  margin: .5rem;
   width: 86px;
 }
 
-.item-icon {
-  background-color: black;
-  border: solid 1px;
-  border-style: inset;
-  height: 50px;
-  margin: 1px auto;
-  margin-bottom: 5px;
-  width: 50px;
+.btn {
+  color: white;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: .8rem;
+  height: 90px;
+  margin: .5rem;
+  padding: 0;
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  width: 90px;
+
+  > .icon {
+    background-color: black;
+    border: solid 1px;
+    border-style: inset;
+    height: 50px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    margin-top: -1em;
+    width: 50px;
+  }
 }
 
-.building {
+
+.building,
+.tech,
+.unit,
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  // justify-content: space-around;
+
+  .node,
+  .building,
+  .tech,
+  .unit {
+    flex: 1 0 0;
+  }
+}
+
+.wrapper > div {  
+  height: 90px;
+  margin: .5rem;
+  padding: 0;
+  width: 90px;
+}
+
+.btn-building {
   background-color: #d23700;
   border-color: #e05933;
+  background: rgb(210,55,0);
+  background: linear-gradient(180deg, rgba(210,55,0,1) 0%, rgba(155,41,0,1) 80%);
+}
+
+.btn-tech {
+  background: rgb(85,119,52);
+  background: linear-gradient(180deg, rgba(85,119,52,1) 0%, rgba(44,62,27,1) 80%);
+  border-color: #557734;
+}
+
+.btn-unit {
+  background-color: #5492b0;
+  background: rgb(84,146,176);
+  background: linear-gradient(180deg, rgba(84,146,176,1) 0%, rgba(42,73,88,1) 80%);
+  border-color: #5492b0;
+}
+
+.icon-barracks {
+  background: url('./assets/icons/building-barracks.png') no-repeat;
 }
