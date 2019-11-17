@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Item(props) {
+const Button = (props) => {
   return (
-    <button className={`btn btn-${props.type}`}>
+    <button className={`btn btn-${props.type}`} onClick={props.onClick}>
       <div className={`icon icon-${props.name}`} />
       {props.name}
     </button>
   );
 }
 
-export default Item;
+export default Button;

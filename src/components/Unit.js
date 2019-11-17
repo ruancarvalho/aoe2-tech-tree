@@ -1,12 +1,12 @@
 import React from 'react';
 import TreeNode from './TreeNode';
 
-const Tech = (props) => {
+const Unit = (props) => {
   return (
-    <TreeNode type="tech" name={props.name}>
+    <TreeNode type="unit" name={props.name}>
       {props.children}
     </TreeNode>
   );
 }
 
-export default Tech;
+export default Unit;

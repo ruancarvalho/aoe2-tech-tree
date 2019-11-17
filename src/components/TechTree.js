@@ -1,9 +1,52 @@
 import React, { Fragment } from 'react';
 
-import Building from './building';
-import Unit from './unit';
+import Building from './Building';
+import Unit from './Unit';
 import Tech from './Tech';
 import Wrapper from './Wrapper';
+
+const MiningTechTree = () => {
+  return (
+    <Building name="Mining Camp">
+      <Wrapper>
+        <Tech name="Gold Mining">
+          <Wrapper>
+            <Tech name="Gold Shaft Mining">
+              <Wrapper />
+            </Tech>
+          </Wrapper>
+        </Tech>
+        <Tech name="Stone Mining">
+          <Wrapper>
+            <Tech name="Stone Shaft Mining">
+              <Wrapper />
+            </Tech>
+          </Wrapper>
+        </Tech>
+      </Wrapper>
+    </Building>
+  )
+}
+
+const LumberTechTree = () => {
+  return (
+    <Building type="building" name="Lumber Camp">
+      <Wrapper>
+        <Tech name="Double-Bit Axe">
+          <Wrapper>
+            <Tech name="Bow Saw">
+              <Wrapper>
+                <Tech name="Two-Man Saw">
+                  <Wrapper />
+                </Tech>
+              </Wrapper>
+            </Tech>
+          </Wrapper>
+        </Tech>
+      </Wrapper>
+    </Building>
+  )
+}
 
 /**
  * The default Tech Tree
@@ -55,40 +98,9 @@ const TechTree = () => {
           return <Wrapper />
         }
       })} */}
-      <Building name="Mining Camp">
-        <Wrapper>
-          <Tech name="Gold Mining">
-            <Wrapper>
-              <Tech name="Gold Shaft Mining">
-                <Wrapper />
-              </Tech>
-            </Wrapper>
-          </Tech>
-          <Tech name="Stone Mining">
-            <Wrapper>
-              <Tech name="Stone Shaft Mining">
-                <Wrapper />
-              </Tech>
-            </Wrapper>
-          </Tech>
-        </Wrapper>
-      </Building>
 
-      <Building name="Lumber Camp">
-        <Wrapper>
-          <Tech name="Double-Bit Axe">
-            <Wrapper>
-              <Tech name="Bow Saw">
-                <Wrapper>
-                  <Tech name="Two-Man Saw">
-                    <Wrapper />
-                  </Tech>
-                </Wrapper>
-              </Tech>
-            </Wrapper>
-          </Tech>
-        </Wrapper>
-      </Building>
+      <MiningTechTree />
+      <LumberTechTree />
 
       <Building name="Mill">
         <Wrapper>
