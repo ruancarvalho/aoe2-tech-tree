@@ -6,6 +6,8 @@ import TechTree from './components/TechTree';
 
 // import { civilizations, CivilizationContext } from '../data/civilization-context'
 
+import { allTechTree, BLANK, BUILDING, TECH, UNIT } from './data/all'
+
 function App() {
 
   return (

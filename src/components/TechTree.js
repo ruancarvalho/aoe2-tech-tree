@@ -43,11 +43,84 @@ const TechTree = () => {
         </Wrapper>
       </Building>
       <Building name="docks" />
-      <Building name="Town Center" />
-      <Building name="Mining Camp" />
-      <Building name="Lumber Camp" />
-      <Building name="Mill" />
       <Building name="House" />
+      <Building name="Town Center" />
+      {/* {allTechTree.map(item => {
+        if (item.type == BUILDING) {
+          return (
+            <Building name={item.name} key={item.name} />
+          )
+        }
+        if (item.type == BLANK) {
+          return <Wrapper />
+        }
+      })} */}
+      <Building name="Mining Camp">
+        <Wrapper>
+          <Tech name="Gold Mining">
+            <Wrapper>
+              <Tech name="Gold Shaft Mining">
+                <Wrapper />
+              </Tech>
+            </Wrapper>
+          </Tech>
+          <Tech name="Stone Mining">
+            <Wrapper>
+              <Tech name="Stone Shaft Mining">
+                <Wrapper />
+              </Tech>
+            </Wrapper>
+          </Tech>
+        </Wrapper>
+      </Building>
+
+      <Building name="Lumber Camp">
+        <Wrapper>
+          <Tech name="Double-Bit Axe">
+            <Wrapper>
+              <Tech name="Bow Saw">
+                <Wrapper>
+                  <Tech name="Two-Man Saw">
+                    <Wrapper />
+                  </Tech>
+                </Wrapper>
+              </Tech>
+            </Wrapper>
+          </Tech>
+        </Wrapper>
+      </Building>
+
+      <Building name="Mill">
+        <Wrapper>
+          <Building name="Market">
+            <Tech name="Cartography">
+              <Tech name="Caravan">
+                <Wrapper>
+                  <Tech name="Guilds" />
+                </Wrapper>
+              </Tech>
+            </Tech>
+            <Tech name="Coinage">
+              <Tech name="Banking" />
+            </Tech>
+            <Unit name="Trade Cart" />
+          </Building>
+        </Wrapper>
+        <Wrapper>
+          <Tech name="Horse Collar">
+            <Wrapper>
+              <Tech name="Heavy Plow">
+                <Wrapper>
+                  <Tech name="Crop Rotation">
+                    <Wrapper />
+                  </Tech>
+                </Wrapper>
+              </Tech>
+            </Wrapper>
+          </Tech>
+        </Wrapper>
+        <Building name="Farm" />
+      </Building>
     </Fragment>
   )
 }
