@@ -1,3 +1,5 @@
+$size: 90px;
+
 .App {
   background-color: #E7C28E;
   background: url('https://res.cloudinary.com/webdevacademy/image/upload/v1573825790/techtree-bg.png');
@@ -23,13 +25,14 @@ ul {
   font-family: 'Times New Roman', Times, serif;
   font-family: Arial, Helvetica, sans-serif;
   font-size: .6rem;
-  height: 90px;
+  height: $size;
   // margin: 1rem 0;
   padding: 0;
   text-transform: capitalize;
   text-overflow: ellipsis;
   overflow-x: hidden;
-  width: 90px;
+  white-space: nowrap;
+  width: $size;
 
   &:focus {
     outline: none;
@@ -42,7 +45,7 @@ ul {
     height: 50px;
     margin: 0 auto;
     margin-bottom: 5px;
-    margin-top: -1em;
+    margin-top: -1.2em;
     width: 50px;
   }
 }
@@ -55,8 +58,9 @@ ul {
   align-items: center;
   display: flex;
   list-style: none;
-  margin: .5rem 0;
+  // margin: .5rem 0;
   padding: 0;
+  position: relative;
   width: 100%;
 
   .children,
@@ -65,6 +69,10 @@ ul {
   .unit {
     flex: 1 0 0;
   }
+}
+
+.node {
+  padding: .625rem 0;
 }
 
 .node::before, 
@@ -86,15 +94,14 @@ ul {
   top: -25px;
   width: 45px;
 }
-/*
-.children::before {
-  border-left: 3px solid #000;
-  display: inline-block;
-  left: -50%;
+
+// remove from root items
+.techtree-inner > .building > .node::before {
+  display: none;
 }
-*/
+
 .wrapper > .blank {  
-  height: 90px;
+  height: $size;
   padding: 0;
   // width: 180px;
 
@@ -102,16 +109,38 @@ ul {
   &::after {
     border-top: 3px solid #000;
     display: inline-block;
-    top: 37%;
+    top: 36%;
     width: 45px;
   }
 }
 
-// .blank::before, 
-// .blank::after {
-//   width: 45px;
-//   top: 33px;
-// }
+
+.children {
+  position: relative;
+  
+  > ul::before {
+    background: black;
+    bottom: 0;
+    content: "";    
+    position: absolute; 
+    top: 0;
+    width: 3px;
+    z-index: 100;
+  }
+
+  > ul:first-child::before {
+    bottom: 0;
+    height: 50%;
+    position: absolute;
+    top: unset;
+  }
+
+  > ul:last-child::before {
+    height: 50%;
+    position: absolute;
+    top: 0;
+  }
+}
 
 .btn-building {
   background-color: #d23700;
