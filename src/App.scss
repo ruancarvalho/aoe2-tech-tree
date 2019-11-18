@@ -1,3 +1,5 @@
+$size: 90px;
+
 .App {
   background-color: #E7C28E;
   background: url('https://res.cloudinary.com/webdevacademy/image/upload/v1573825790/techtree-bg.png');
@@ -11,7 +13,6 @@
   flex-direction: row;
   justify-content: flex-start;
   min-height: 100vh;
-  /* font-size: calc(10px + 2vmin); */
 }
 
 ul {
@@ -24,13 +25,14 @@ ul {
   font-family: 'Times New Roman', Times, serif;
   font-family: Arial, Helvetica, sans-serif;
   font-size: .6rem;
-  height: 90px;
-  margin: .5rem 1rem;
+  height: $size;
+  // margin: 1rem 0;
   padding: 0;
   text-transform: capitalize;
   text-overflow: ellipsis;
   overflow-x: hidden;
-  width: 90px;
+  white-space: nowrap;
+  width: $size;
 
   &:focus {
     outline: none;
@@ -43,7 +45,7 @@ ul {
     height: 50px;
     margin: 0 auto;
     margin-bottom: 5px;
-    margin-top: -1em;
+    margin-top: -1.2em;
     width: 50px;
   }
 }
@@ -53,13 +55,13 @@ ul {
 .tech,
 .unit,
 .wrapper {
-  display: flex;
   align-items: center;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  display: flex;
   list-style: none;
-  // justify-content: space-around;
+  // margin: .5rem 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
 
   .children,
   .building,
@@ -69,11 +71,75 @@ ul {
   }
 }
 
+.node {
+  padding: .625rem 0;
+}
+
+.node::before, 
+.node::after {
+  content: "";
+  position: relative;
+}
+
+.node::before {
+  border-top: 3px solid #000;
+  display: inline-block;
+  top: -25px;
+  width: 45px;
+}
+
+.node::after {
+  border-top: 3px solid #000;
+  display: inline-block;
+  top: -25px;
+  width: 45px;
+}
+
+// remove from root items
+.techtree-inner > .building > .node::before {
+  display: none;
+}
+
 .wrapper > .blank {  
-  height: 90px;
-  margin: .5rem 1rem;
+  height: $size;
   padding: 0;
-  width: 90px;
+  // width: 180px;
+
+  &::before,
+  &::after {
+    border-top: 3px solid #000;
+    display: inline-block;
+    top: 36%;
+    width: 45px;
+  }
+}
+
+
+.children {
+  position: relative;
+  
+  > ul::before {
+    background: black;
+    bottom: 0;
+    content: "";    
+    position: absolute; 
+    top: 0;
+    width: 3px;
+    z-index: 100;
+  }
+
+  > ul:first-child::before {
+    bottom: 0;
+    height: 50%;
+    position: absolute;
+    top: unset;
+  }
+
+  > ul:last-child::before {
+    height: 50%;
+    position: absolute;
+    top: 0;
+  }
 }
 
 .btn-building {
