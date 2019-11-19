@@ -5,22 +5,59 @@ import Unit from './Unit';
 import Tech from './Tech';
 import Wrapper from './Wrapper';
 
+const TownCenterTechTree = () => {
+  return (
+    <Fragment>
+      <Building name="Town Center">
+        <Unit name="Villager">
+          <Tech name="Town Watch">
+            <Wrapper>
+              <Tech name="Town Patrol " />
+            </Wrapper>
+          </Tech>
+        </Unit>
+        <Tech name="Feudal Age">
+          <Tech name="Castle Age">
+            <Wrapper>
+              <Tech name="Imperial Age" />
+            </Wrapper>
+          </Tech>
+        </Tech>
+        <Tech name="Loom">
+          <Tech name="Wheelbarrow">
+            <Wrapper>
+              <Tech name="Hand Cart" />
+            </Wrapper>
+          </Tech>
+        </Tech>
+      </Building>
+      <Wrapper>
+        <Wrapper>
+          <Wrapper>
+            <Wrapper>
+              <Wrapper>
+                <Building name="Town Center" />
+              </Wrapper>
+            </Wrapper>
+          </Wrapper>
+        </Wrapper>  
+      </Wrapper>
+    </Fragment>
+  )
+}
+
 const MiningTechTree = () => {
   return (
     <Building name="Mining Camp">
       <Wrapper>
         <Tech name="Gold Mining">
           <Wrapper>
-            <Tech name="Gold Shaft Mining">
-              <Wrapper />
-            </Tech>
+            <Tech name="Gold Shaft Mining" />
           </Wrapper>
         </Tech>
         <Tech name="Stone Mining">
           <Wrapper>
-            <Tech name="Stone Shaft Mining">
-              <Wrapper />
-            </Tech>
+            <Tech name="Stone Shaft Mining" />
           </Wrapper>
         </Tech>
       </Wrapper>
@@ -36,9 +73,7 @@ const LumberTechTree = () => {
           <Wrapper>
             <Tech name="Bow Saw">
               <Wrapper>
-                <Tech name="Two-Man Saw">
-                  <Wrapper />
-                </Tech>
+                <Tech name="Two-Man Saw" />
               </Wrapper>
             </Tech>
           </Wrapper>
@@ -74,11 +109,15 @@ const TechTree = () => {
         </Wrapper>
         <Unit name="Militia">
           <Unit name="Man-at-Arms">
-            <Unit name="Long Swordsman">
-              <Unit name="Two-Handed Swordsman">
-                <Unit name="Champion" />
+            <Wrapper>
+              <Unit name="Long Swordsman">
+                <Wrapper>
+                  <Unit name="Two-Handed Swordsman">
+                    <Unit name="Champion" />
+                  </Unit>
+                </Wrapper>
               </Unit>
-            </Unit>
+            </Wrapper>
           </Unit>
         </Unit>
         <Wrapper>
@@ -87,7 +126,7 @@ const TechTree = () => {
       </Building>
       <Building name="docks" />
       <Building name="House" />
-      <Building name="Town Center" />
+      <TownCenterTechTree />
       {/* {allTechTree.map(item => {
         if (item.type == BUILDING) {
           return (
@@ -123,9 +162,7 @@ const TechTree = () => {
             <Wrapper>
               <Tech name="Heavy Plow">
                 <Wrapper>
-                  <Tech name="Crop Rotation">
-                    <Wrapper />
-                  </Tech>
+                  <Tech name="Crop Rotation" />
                 </Wrapper>
               </Tech>
             </Wrapper>
@@ -133,6 +170,9 @@ const TechTree = () => {
         </Wrapper>
         <Building name="Farm" />
       </Building>
+      <div className="age feudal-age"></div>
+      <div className="age castle-age"></div>
+      <div className="age imperial-age"></div>
     </Fragment>
   )
 }

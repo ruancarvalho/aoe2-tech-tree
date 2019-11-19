@@ -63,6 +63,10 @@ ul {
   position: relative;
   width: 100%;
 
+  transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+
   .children,
   .building,
   .tech,
@@ -95,25 +99,44 @@ ul {
   width: 45px;
 }
 
+.node:last-child::after {
+  display: none;
+}
+
 // remove from root items
 .techtree-inner > .building > .node::before {
   display: none;
 }
 
 .wrapper > .blank {  
+  // background: rgba(0,1,0,0.1);
   height: $size;
   padding: 0;
-  // width: 180px;
+  width: $size * 2;
 
   &::before,
   &::after {
     border-top: 3px solid #000;
     display: inline-block;
     top: 36%;
-    width: 45px;
+    width: $size;
+  }
+  
+  &::after {
+    width: $size;
   }
 }
 
+.wrapper.no-connector {
+  >.blank::before,
+  >.blank::after {
+    border: none;
+  } 
+}
+
+.techtree-inner > .wrapper > .blank {
+  width: $size + 45;
+}
 
 .children {
   position: relative;
@@ -126,6 +149,13 @@ ul {
     top: 0;
     width: 3px;
     z-index: 100;
+  }
+
+  > ul::after {
+    background: black;
+    content: "";    
+    position: absolute; 
+    width: 3px;
   }
 
   > ul:first-child::before {
@@ -166,4 +196,26 @@ ul {
   background: url('./assets/icons/building-barracks.png') no-repeat;
 }
 
-@import 'styles/Sidebar.scss'
+@import 'styles/Sidebar.scss';
+
+.age {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  width: 10px;
+  
+  // w = 360px
+
+  &.feudal-age {
+    left: 310px;
+  }
+
+  &.castle-age {
+    left: 670px;
+  }
+
+  &.imperial-age {
+    left: 1030px;
+  }
+}
