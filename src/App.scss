@@ -1,4 +1,12 @@
-$size: 90px;
+$nodeSize: 90px;
+$connectorSize: $nodeSize / 3;
+$blankSize: $nodeSize * 2 - $connectorSize;
+$blankConnectorSize: $blankSize / 2;
+
+$feudalAgeMargin: $nodeSize * 3 - 5;
+$castleAgeMargin: $feudalAgeMargin + (300);
+$imperialAgeMargin: $castleAgeMargin + (300);
+
 
 .App {
   background-color: #E7C28E;
@@ -25,14 +33,14 @@ ul {
   font-family: 'Times New Roman', Times, serif;
   font-family: Arial, Helvetica, sans-serif;
   font-size: .6rem;
-  height: $size;
+  height: $nodeSize;
   // margin: 1rem 0;
   padding: 0;
   text-transform: capitalize;
   text-overflow: ellipsis;
   overflow-x: hidden;
   white-space: nowrap;
-  width: $size;
+  width: $nodeSize;
 
   &:focus {
     outline: none;
@@ -89,14 +97,14 @@ ul {
   border-top: 3px solid #000;
   display: inline-block;
   top: -25px;
-  width: 45px;
+  width: $connectorSize;
 }
 
 .node::after {
   border-top: 3px solid #000;
   display: inline-block;
   top: -25px;
-  width: 45px;
+  width: $connectorSize;
 }
 
 .node:last-child::after {
@@ -110,20 +118,20 @@ ul {
 
 .wrapper > .blank {  
   // background: rgba(0,1,0,0.1);
-  height: $size;
+  height: $nodeSize;
   padding: 0;
-  width: $size * 2;
+  width: $blankSize;
 
   &::before,
   &::after {
     border-top: 3px solid #000;
     display: inline-block;
     top: 36%;
-    width: $size;
+    width: $blankConnectorSize;
   }
   
   &::after {
-    width: $size;
+    width: $blankConnectorSize;
   }
 }
 
@@ -135,7 +143,7 @@ ul {
 }
 
 .techtree-inner > .wrapper > .blank {
-  width: $size + 45;
+  width: $nodeSize + $connectorSize;
 }
 
 .children {
@@ -208,14 +216,14 @@ ul {
   // w = 360px
 
   &.feudal-age {
-    left: 310px;
+    left: $feudalAgeMargin;
   }
 
   &.castle-age {
-    left: 670px;
+    left: $castleAgeMargin;
   }
 
   &.imperial-age {
-    left: 1030px;
+    left: $imperialAgeMargin;
   }
 }

@@ -5,6 +5,41 @@ import Unit from './Unit';
 import Tech from './Tech';
 import Wrapper from './Wrapper';
 
+
+
+const ArcheryTechTree = () => {
+  return (
+    <Fragment>
+      <Building name="Archery Range">
+        <Unit name="Archer">
+          <Unit name="Crossbowman">
+            <Wrapper>
+              <Unit name="Arbalest" />
+            </Wrapper>
+          </Unit>
+        </Unit>
+        <Unit name="Skirmicher">
+          <Unit name="Elite Skirmicher">
+            <Wrapper>
+              <Unit name="Imperial Skirmisher" />
+            </Wrapper>
+          </Unit>
+        </Unit>
+        <Wrapper>
+          <Unit name="Cavalry Archer">
+            <Wrapper>
+              <Unit name="Heavy Cavalry Archer" />
+            </Wrapper>
+          </Unit>
+        </Wrapper>
+        <Wrapper>
+          <Tech name="Thumb Ring" />
+        </Wrapper>
+      </Building>
+    </Fragment>
+  )
+}
+
 const TownCenterTechTree = () => {
   return (
     <Fragment>
@@ -31,13 +66,11 @@ const TownCenterTechTree = () => {
           </Tech>
         </Tech>
       </Building>
-      <Wrapper>
-        <Wrapper>
-          <Wrapper>
-            <Wrapper>
-              <Wrapper>
-                <Building name="Town Center" />
-              </Wrapper>
+      <Wrapper connector={false}>
+        <Wrapper connector={false}>
+          <Wrapper connector={false}>
+            <Wrapper connector={false}>
+              <Building name="Town Center" />
             </Wrapper>
           </Wrapper>
         </Wrapper>  
@@ -92,20 +125,7 @@ const TechTree = () => {
     <Fragment>   
       <Building name="barracks">
         <Wrapper>
-          <Building name="Archery Range">
-            <Unit name="Archer">
-              <Unit name="Crossbowman" />
-            </Unit>
-            <Unit name="Skirmicher">
-              <Unit name="Elite Skirmicher" />
-            </Unit>
-            <Wrapper>
-              <Unit name="Cavalry Archer" />
-            </Wrapper>
-            <Wrapper>
-              <Tech name="Thumb Ring" />
-            </Wrapper>
-          </Building>
+          <ArcheryTechTree />
         </Wrapper>
         <Unit name="Militia">
           <Unit name="Man-at-Arms">
@@ -120,6 +140,17 @@ const TechTree = () => {
             </Wrapper>
           </Unit>
         </Unit>
+        <Wrapper>
+          <Unit name="Spearman">
+            <Wrapper>
+              <Unit name="Pikeman">
+                <Wrapper>
+                  <Unit name="Halberdier" />
+                </Wrapper>
+              </Unit>
+            </Wrapper>
+          </Unit>
+        </Wrapper>
         <Wrapper>
           <Building name="Stable" />
         </Wrapper>

@@ -7,8 +7,10 @@ function Wrapper(props) {
     classes = 'child'
   }
 
+  let connector = props.connector === false ? 'no-connector' : '';
+
   return (
-    <ul className="wrapper">
+    <ul className={`wrapper ${connector}`}>
       <li className="node blank" />
       <li className={classes}>
         { props.children }
