@@ -7,9 +7,11 @@ $feudalAgeMargin: $nodeSize * 3 - 5;
 $castleAgeMargin: $feudalAgeMargin + (300);
 $imperialAgeMargin: $castleAgeMargin + (300);
 
+body {
+  background: #E7C28E;
+}
 
 .App {
-  background-color: #E7C28E;
   background: url('https://res.cloudinary.com/webdevacademy/image/upload/v1573825790/techtree-bg.png');
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
@@ -62,6 +64,7 @@ ul {
 .building,
 .tech,
 .unit,
+.unique-unit,
 .wrapper {
   align-items: center;
   display: flex;
@@ -78,7 +81,8 @@ ul {
   .children,
   .building,
   .tech,
-  .unit {
+  .unit,
+  .unique-unit {
     flex: 1 0 0;
   }
 }
@@ -198,6 +202,13 @@ ul {
   background: rgb(84,146,176);
   background: linear-gradient(180deg, rgba(84,146,176,1) 0%, rgba(42,73,88,1) 80%);
   border-color: #5492b0;
+}
+
+.btn-unique-unit {
+  background-color: #AF30A3;
+  // background: rgb(84,146,176);
+  background: linear-gradient(180deg, rgb(172, 46, 159) 0%, rgb(104, 9, 94));
+  border-color: #AF30A3;
 }
 
 .icon-barracks {

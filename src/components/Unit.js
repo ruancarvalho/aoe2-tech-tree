@@ -2,8 +2,10 @@ import React from 'react';
 import TreeNode from './TreeNode';
 
 const Unit = (props) => {
+  let unitType = props.unique ? 'unique-unit' : 'unit'
+
   return (
-    <TreeNode type="unit" name={props.name}>
+    <TreeNode type={unitType} name={props.name}>
       {props.children}
     </TreeNode>
   );
