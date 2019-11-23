@@ -72,6 +72,42 @@ const BarracksTechTree = () => {
   )
 }
 
+const WonderTechTree = () => {
+  return (
+    <Wrapper connector={false}>
+      <Wrapper connector={false}>
+        <Wrapper connector={false}>
+          <Wrapper connector={false}>
+            <Wrapper connector={false}>
+              <Wrapper connector={false}>
+                <Building name="Wonder" />
+              </Wrapper>
+            </Wrapper>
+          </Wrapper>
+        </Wrapper>
+      </Wrapper>
+    </Wrapper>
+  )
+}
+
+const FeitoriaTechTree = () => {
+  return (
+    <Wrapper connector={false}>
+      <Wrapper connector={false}>
+        <Wrapper connector={false}>
+          <Wrapper connector={false}>
+            <Wrapper connector={false}>
+              <Wrapper connector={false}>
+                <Building name="Feitoria" />
+              </Wrapper>
+            </Wrapper>
+          </Wrapper>
+        </Wrapper>
+      </Wrapper>
+    </Wrapper>
+  )
+}
+
 const ArcheryTechTree = () => {
   return (
     <Fragment>
@@ -234,8 +270,12 @@ const TechTree = () => {
     <Fragment>   
       <BarracksTechTree />
 
-      <Building name="docks" />
+      <WonderTechTree />
       
+      <FeitoriaTechTree />
+
+      <Building name="docks" />
+
       <Building name="House" />
       
       <TownCenterTechTree />
