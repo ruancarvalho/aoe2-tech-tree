@@ -218,6 +218,41 @@ const DockTechTree = () => {
     </Building>
   )
 }
+
+const OutpostTechTree = () => {
+  return (
+    <Building name="Outpost">
+      <Wrapper>
+        <Building name="Watch Tower">
+          <Wrapper>
+            <Building name="Guard Tower">
+              <Wrapper>
+                <Building name="Keep">
+                  <Building name="Bombard Tower" />
+                </Building>
+              </Wrapper>
+            </Building>
+          </Wrapper>
+        </Building>
+      </Wrapper>
+    </Building>
+  )
+}
+
+const WallTechTree = () => {
+  return (
+    <Building name="Palisade Wall">
+      <Building name="Palisade Gate">
+        <Building name="Gate">
+          <Building name="Stone Wall">
+            <Building name="Fortfied Wall" />
+          </Building>
+        </Building>
+      </Building>
+    </Building>
+  )
+}
+
 const ArcheryTechTree = () => {
   return (
     <Fragment>
@@ -385,6 +420,10 @@ const TechTree = () => {
       <FeitoriaTechTree />
 
       <DockTechTree />
+
+      <OutpostTechTree />
+
+      <WallTechTree />
       
       <Building name="House" />
       
