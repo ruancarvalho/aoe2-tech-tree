@@ -109,6 +109,41 @@ const StableTechTree = () => {
   return (
     <Fragment>
       <Building name="Stable">
+        <Unit name="Scout Cavalry">
+          <Unit name="Light Cavalry">
+            <Wrapper>
+              <Unit name="Hussar" />
+            </Wrapper>
+          </Unit>
+        </Unit>
+        <Tech name="Bloodlines">
+          <Unit name="Knight">
+            <Wrapper>
+              <Unit name="Cavalier">
+                <Unit name="Paladin" />
+              </Unit>
+            </Wrapper>
+          </Unit>
+        </Tech>
+        <Wrapper>
+          <Unit name="Camel">
+            <Wrapper>
+              <Unit name="Heavy Camel">
+                <Unit name="Imperial Camel" unique/>
+              </Unit>
+            </Wrapper>
+          </Unit>
+        </Wrapper>
+        <Wrapper>
+          <Unit name="Battle Elephant">
+            <Wrapper>
+              <Unit name="Elite Battle Elephant" />
+            </Wrapper>
+          </Unit>
+        </Wrapper>
+        <Wrapper>
+          <Tech name="Husbandry" />
+        </Wrapper>
       </Building>
     </Fragment>
   )
