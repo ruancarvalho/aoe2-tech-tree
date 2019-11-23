@@ -108,6 +108,116 @@ const FeitoriaTechTree = () => {
   )
 }
 
+const DockTechTree = () => {
+  return (
+    <Building name="Dock">
+      <Unit name="Fishing Ship">
+        <Unit name="Fire Galley">
+          <Wrapper>
+            <Unit name="Fire Ship">
+              <Wrapper>
+                <Unit name="Fast Fire Ship" />
+              </Wrapper>
+            </Unit>
+          </Wrapper>
+        </Unit>
+      </Unit>
+      <Unit name="Transport Ship">
+        <Unit name="Trade Cog">
+          <Wrapper>
+            <Tech name="Gillnets">
+              <Wrapper>
+                <Unit name="Cannon Galleon">
+                  <Unit name="Elite Cannon Galleon" />
+                </Unit>
+              </Wrapper>
+            </Tech>
+          </Wrapper>
+        </Unit>
+      </Unit>
+      <Wrapper>
+        <Unit name="Demolition Raft">
+          <Wrapper>
+            <Unit name="Demolition Ship">
+              <Wrapper>
+                <Unit name="Heavy Demolition Ship" />
+              </Wrapper>
+            </Unit>
+          </Wrapper>
+        </Unit>
+      </Wrapper>
+      <Wrapper>
+        <Unit name="Galley">
+          <Wrapper>
+            <Unit name="War Galley">
+              <Wrapper>
+                <Unit name="Galleon" />
+              </Wrapper>
+            </Unit>
+          </Wrapper>
+        </Unit>
+      </Wrapper>
+      <Wrapper>
+        <Wrapper>
+          <Wrapper>
+            <Unit name="Turtle Ship" unique>
+              <Wrapper>
+                <Unit name="Elite Turtle Ship" unique />
+              </Wrapper>
+            </Unit>
+          </Wrapper>
+        </Wrapper>
+      </Wrapper> 
+      <Wrapper>
+        <Wrapper>
+          <Wrapper>
+            <Unit name="Longboat" unique>
+              <Wrapper>
+                <Unit name="Elite Longboat" unique />
+              </Wrapper>
+            </Unit>
+          </Wrapper>
+        </Wrapper>
+      </Wrapper>
+      <Wrapper>
+        <Wrapper>
+          <Wrapper>
+            <Unit name="Caravel" unique>
+              <Wrapper>
+                <Unit name="Elite Caravel" unique/>
+              </Wrapper>
+            </Unit>
+          </Wrapper>
+        </Wrapper>
+      </Wrapper>
+      <Wrapper>
+        <Wrapper>
+          <Wrapper>
+            <Tech name="Careening">
+              <Wrapper>
+                <Tech name="Dry Dock" />
+              </Wrapper>
+            </Tech>
+          </Wrapper>
+        </Wrapper>
+      </Wrapper>
+      <Wrapper>
+        <Wrapper>
+          <Wrapper>
+            <Wrapper>
+              <Wrapper>
+                <Tech name="Shipwright" />
+              </Wrapper>
+            </Wrapper>
+          </Wrapper>
+        </Wrapper>
+      </Wrapper>
+      <Wrapper>
+        <Building name="Fish Trap"></Building>
+      </Wrapper>
+    </Building>
+  )
+}
 const ArcheryTechTree = () => {
   return (
     <Fragment>
@@ -271,11 +381,11 @@ const TechTree = () => {
       <BarracksTechTree />
 
       <WonderTechTree />
-      
+
       <FeitoriaTechTree />
 
-      <Building name="docks" />
-
+      <DockTechTree />
+      
       <Building name="House" />
       
       <TownCenterTechTree />
